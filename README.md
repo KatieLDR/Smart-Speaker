@@ -1,6 +1,6 @@
 # IoT Smart-Speaker
 ## Overview
-By looking at the Picamera and blink eye，our Python code will fetch and play studying youtube music automatically. You can stop at any time by blinking at the Picamera again.
+By looking at the Picamera and blinking eyes，our Python code will fetch and play studying youtube music automatically. You can stop at any time by blinking at the Picamera again.
 ## Demo Video
 
 [Demo 1](https://youtu.be/trSXjLE6yNU )
@@ -23,8 +23,16 @@ By looking at the Picamera and blink eye，our Python code will fetch and play s
 * [raspbian os]()
 
 #### Python package
-* [OpenCV](https://www.pyimagesearch.com/2019/09/16/install-opencv-4-on-raspberry-pi-4-and-raspbian-buster/)
+* [OpenCV for Raspberry pi 4](https://www.pyimagesearch.com/2019/09/16/install-opencv-4-on-raspberry-pi-4-and-raspbian-buster/)
+	* As a small Reminder, be sure to follow each step on the tutorial website or something really bad will happen in the near future. :fearful:
+	* If you got berryconda installed on your pi previously, you can easily create virtual enviorment with it.
+	* Be sure to install all of your pip package in virtual enviornment. If you use sudo apt-get instead, make sure to make the connection between the virtual enviornment  and the package outside with -ln command.
+	* CMAKE takes lots of time, be patient.
+* [OpenCV for Raspberry pi 3](https://nancyyluu.blogspot.com/2017/12/raspberry-pi-opencvcontrib.html?fbclid=IwAR0EQGX7_1VAalSN9g6dk1jNIGuW9GNlx-vQ34T20t1wMoWV4An9lHtFMhk)
+	* The version is 3.2.0.
+	* Put all the file in bak into bashrc, then run the CMAKE step again. This help us step the default Python enviornment to miniconda. 
 * [Picamera](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/3)
+	* Use raspistill -o xx.jpg to test if your picamera works fine.
 * [imutils](https://pypi.org/project/imutils/)
 * [dlib](https://pypi.org/project/dlib/)
 * [youtube_dl](https://pypi.org/project/youtube_dl/)
@@ -35,7 +43,7 @@ By looking at the Picamera and blink eye，our Python code will fetch and play s
 
 #### Step1：Enviorment Configuration
 
-1. Set up the raspberry pi as the picture show as well as install all necessary package mentioned above. Carefully download every package with pip in virtual enviornment because our code will be run in virtual enviornment.
+1. Set up the raspberry pi as the picture show as well as carefully install all necessary package mentioned above. 
 2. Connect the bluetooth speaker
 	1. Go to the bluetooth interface and than check if the volume output has change to your bluetooth device
 	
