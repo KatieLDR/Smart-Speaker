@@ -35,11 +35,13 @@ By looking at the Picamera and blink eye，our Python code will fetch and play s
 
 #### Step1：Enviorment Configuration
 
-Set up the raspberry pi as the picture show as well as install all necessary package mentioned above. Carefully download every package with pip in virtual enviornment because our code will be run in virtual enviornment.
-
+1. Set up the raspberry pi as the picture show as well as install all necessary package mentioned above. Carefully download every package with pip in virtual enviornment because our code will be run in virtual enviornment.
+2. Connect the bluetooth speaker
+	1. Go to the bluetooth interface and than check if the volume output has change to your bluetooth device
+	
 #### Step2：
 
-Train model either by [Google Teachable Machine](https://teachablemachine.withgoogle.com/) or CV2 
+Train model either by [YOLO](https://teachablemachine.withgoogle.com/) or CV2 
 * In my model, I utilized cv2 and dlib pretrained model to implement my following project
 
 #### Step3:
@@ -61,7 +63,7 @@ def eye_aspect_ratio(eye):
 ```
 
 #### Step4:
-建立GUI視窗
+Set up GUI
 ```python
 window = tk.Tk()
 window.title('eye_detector')
@@ -154,9 +156,9 @@ Start identifying every frame in streaming video with following steps:
 2. Save the factial landmark into NumPy array
 3. Depicit the eye shape
 4. Ditermine if 'blink' has taken place in this frame
-  1.  Check if the EAR is below or blink threshold, if so, increase the frame counter
-  2.  Check if sufficient number of frame below our predefined threshold, is so, increase the total blink counter
-    1. If blink count is odd number, than play the music, otherwise, pause the music  
+	1. Check if the EAR is below or blink threshold, if so, increase the frame counter
+	2. Check if sufficient number of frame below our predefined threshold, is so, increase the total blink counter
+		1. If blink count is odd number, than play the music, otherwise, pause the music 
 5. Show the result on window
 6. Get the warning if too close to the camera
 
