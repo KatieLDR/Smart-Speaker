@@ -30,7 +30,7 @@ By looking at the Picamera and blinking eyes，our Python code will fetch and pl
 	* CMAKE takes lots of time, be patient.
 * [OpenCV for Raspberry pi 3](https://nancyyluu.blogspot.com/2017/12/raspberry-pi-opencvcontrib.html?fbclid=IwAR0EQGX7_1VAalSN9g6dk1jNIGuW9GNlx-vQ34T20t1wMoWV4An9lHtFMhk)
 	* The version is 3.2.0.
-	* Put all the file in bak into bashrc, then run the CMAKE step again. This help us step the default Python enviornment to miniconda. 
+	* Put all the file in bak into bashrc, then run the CMAKE step again. This help us set the default Python enviornment to miniconda. 
 * [Picamera](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/3)
 	* Use raspistill -o xx.jpg to test if your picamera works fine.
 * [imutils](https://pypi.org/project/imutils/)
