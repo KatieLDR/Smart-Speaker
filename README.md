@@ -104,7 +104,7 @@ window.mainloop()
 ```
 
 #### Step5: 
-Set to import dlib model by command line. I've put the trained modelin the respository.
+Set to import dlib model by command line. I've put the trained model in the respository.
 
 ```python
 # 利用argument parse 讓我可以在command line 匯入人臉特徵的pretrained model
