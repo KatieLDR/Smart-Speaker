@@ -244,6 +244,7 @@ python MusicPlayer.py --shape-predictor shape_predictor_68_face_landmarks.dat
 
 ### Reference
 
+* [OpenCV face recognition](https://zhuanlan.zhihu.com/p/69127267)
 * [Eye Aspect Ratio essay](http://vision.fe.uni-lj.si/cvww2016/proceedings/papers/05.pdf?spm=5176.100239.blogcont336184.8.b7697a07zKT7r&file=05.pdf)
-* [Eye blink detection](https://blog.csdn.net/hongbin_xu/article/details/79033116)
+* [Eye landmark detection](https://medium.com/algoasylum/blink-detection-using-python-737a88893825)
 * [Youtube Music Fetch](https://linuxconfig.org/how-to-play-audio-with-vlc-in-python#:~:text=player.play()-,Stopping%20And%20Pause,if%20the%20file%20is%20playing.&text=If%20the%20player%20is%20already,altogether%2C%20call%20the%20stop%20method.)
