@@ -1,9 +1,6 @@
 # IoT Smart-Speaker
 ## Overview
-This is the easiest way to control your speaker. 
-Have you ever encounter the situation when you don't have spare hands turning off the music or feel annoying to control volume by keyboard? In my project, you can easily turn on and off the music simply by looking at the Picamera and blinking eyes. Our Python code will fetch and play studying music on youtube automatically. It means that you don't have to download the music onto your Pi. You can stop at anytime by blinking at the Picamera again. 
-Also, I utilized gesture sensor to detect hands movement. If you move your hand upward, the volume will goes up, vice versa.
-This project can extend to anything you want to control with your eyes. For example, turn off the light, turn on the computer... and so on.
+The easiest way to control your speaker. Have you ever encounter a situation when you don't have spare hands turning off the music? Or ever feel annoying to control volume by keyboard? In my project, you can turn on and off the speaker by looking at the Picamera and blinking eyes. Our Python code will fetch and play studying music on youtube automatically. It means that you don't have to download the music onto your Pi. You can stop at any time by blinking at the Picamera again. Also, I utilized the gesture sensor to detect hand movement. If you move your hand upward, the volume will go up, vice versa. This project can extend to anything you want to control with your eyes. For example, turn off the light, turn on the computer, and so on.
 
 ## Prerequisites
 
@@ -22,13 +19,13 @@ This project can extend to anything you want to control with your eyes. For exam
 
 #### Python package
 * [OpenCV for Raspberry pi 4](https://www.pyimagesearch.com/2019/09/16/install-opencv-4-on-raspberry-pi-4-and-raspbian-buster/)
-	* As a small Reminder, be sure to follow each step on the tutorial website or something terrible will definitely happen beyond your imagination. I mean it! :fearful:
-	* If you got berryconda installed on your pi previously, you can easily create virtual enviorment with it.
-	* Be sure to install all of your pip package in virtual enviornment. If you use sudo apt-get instead, make sure to make the connection between the virtual enviornment  and the package outside with -ln command.
+	* As a small Reminder, be sure to follow each step on the tutorial website, otherwise something terrible will happen beyond your imagination. I mean it! :fearful:
+	* If you got berryconda installed on your pi previously, you can easily create a virtual environment with it.
+	* Be sure to install all of your pip package in a virtual environment. If you use sudo apt-get instead, make sure to make the connection between the virtual environment and the package outside with -ln command.
 	* CMAKE takes lots of time, be patient.
 * [OpenCV for Raspberry pi 3](https://nancyyluu.blogspot.com/2017/12/raspberry-pi-opencvcontrib.html?fbclid=IwAR0EQGX7_1VAalSN9g6dk1jNIGuW9GNlx-vQ34T20t1wMoWV4An9lHtFMhk)
 	* The version is 3.2.0.
-	* Put all the file in bak into bashrc, then run the CMAKE step again. This help us set the default Python enviornment to miniconda. 
+	* Put all the files in bak into bashrc, then run the CMAKE step again. This helps us set the default Python environment to miniconda. 
 * [Picamera](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/3)
 	* Use raspistill -o xx.jpg to test if your picamera works fine.
 * [imutils](https://pypi.org/project/imutils/)
@@ -41,17 +38,17 @@ This project can extend to anything you want to control with your eyes. For exam
 
 ### Step1：Enviorment Configuration
 
-1. Set up the raspberry pi as the picture show as well as carefully install all necessary package mentioned above. 
+1. Setting up the raspberry pi as the picture show as well as carefully install all necessary package mentioned above. 
 2. Connect the bluetooth speaker
-	1. Go to the bluetooth interface and than check if the volume output has change to your bluetooth device
+	1. Go to the Bluetooth interface and then check if the volume output has changed to your Bluetooth device
 	
 ### Step2：
 
 Train model either by [YOLO](https://teachablemachine.withgoogle.com/) or CV2 
-* In my model, I utilized cv2 and dlib pretrained model to implement my following project
+* In my model, I utilized the cv2 and dlib pretrained model to implement my following project
 
 ### Step3:
-Define Eye Aspect Ratio
+Defining Eye Aspect Ratio
 ```python
 def eye_aspect_ratio(eye):
 	# 計算左右眼分別的眼高(歐式距離)
@@ -69,7 +66,7 @@ def eye_aspect_ratio(eye):
 ```
 
 ### Step4:
-Set up GUI
+Setting up GUI
 ```python
 window = tk.Tk()
 window.title('eye_detector')
@@ -102,7 +99,7 @@ window.mainloop()
 ```
 
 ### Step5: 
-Set to import dlib model by command line. I've put the trained model in the respository.
+Setting to import dlib model by command line. I've put the trained model in the repository.
 
 ```python
 # 利用argument parse 讓我可以在command line 匯入人臉特徵的pretrained model
@@ -135,7 +132,7 @@ LEFT_EYE_MIDDLE = 46 - 1
 ```
 
 ### Step6:
-Set video steaming with Picamer, the video quaily of VideoStream is a lot better than piRGBArray
+Setting video streaming with Picamer, the video quality of VideoStream is a lot better than piRGBArray.
 
 ```python
 vs = VideoStream(usePiCamera=True).start()
@@ -157,16 +154,16 @@ media = vlc.MediaPlayer(best.url)
 ```
 
 ### Step 8:
-Start identifying every frame in streaming video with following steps:
-1. Get the frame and transfer it into gray scale by cv2 function
-2. Save the factial landmark into NumPy array
-3. Depicit the eye shape
-4. Ditermine if 'blink' has taken place in this frame
-	1. Check if the EAR is below or blink threshold, if so, increase the frame counter
-	2. Check if sufficient number of frame below our predefined threshold, is so, increase the total blink counter
-		1. If blink count is odd number, than play the music, otherwise, pause the music 
-5. Show the result on window
-6. Get the warning if too close to the camera
+Starting to identify every frame in streaming video with the following steps:
+1. Get the frame and transfer it into grayscale by cv2 function.
+2. Save the facial landmark into the NumPy array.
+3. Depict the eye shape.
+4. Determine if 'blink' has taken place in this frame.
+	1. Check if the EAR is below or blink threshold. If so, increase the frame counter.
+	2. Check if a sufficient number of the frame below our predefined threshold. If so, increase the total blink counter.
+		1. If blink count is odd then playing the music; otherwise, pause the music. 
+5. Show the result on the window.
+6. Get the warning if too close to the camera.
 
 ```python
 # 遞迴循環video stream的每個frame
@@ -237,7 +234,7 @@ while True:
 
 ### Step 9: 
 
-Put the pretrained model and python code in the same directory and run the code by following command.
+Put the pre-trained model and python code in the same directory and run the code by the following command.
 ```linux
 cd theFileLocation
 python MusicPlayer.py --shape-predictor shape_predictor_68_face_landmarks.dat
@@ -245,7 +242,7 @@ python MusicPlayer.py --shape-predictor shape_predictor_68_face_landmarks.dat
 
 ## Demo Video
 
-*Because I detect blinking eyes and fetch the music on youtube simultaneously, so the first blink will take time to get the music* 
+*Because I detect blinking eyes and fetch the music on youtube simultaneously, so the first blink will take time to get the music.* 
 
 [Demo 1](https://youtu.be/trSXjLE6yNU )
 
@@ -253,7 +250,7 @@ python MusicPlayer.py --shape-predictor shape_predictor_68_face_landmarks.dat
 
 ## Remain unfinished
 
-Because I made a false move, plugging the sensor into false GPIO pin, the gesture sensor burned out accidentally. As a result, I couldn't accomplish the gesture detect part of my project. I've tried to substitute ultrasonic senosr for gesture sensor but it can't work correctly either. Following is the step I've done for volume control so far.
+Because I made a false move, plugging the sensor into a wrong GPIO pin, the gesture sensor burned out accidentally. As a result, I couldn't accomplish the gesture to detect part of my project. I've tried to substitute ultrasonic sensor for gesture sensor but it can't work correctly either. Following is the step I've done for volume control so far.
 
 ### Python control Raspberry pi volume
 1. First download necessary python package
