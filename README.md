@@ -1,6 +1,6 @@
 # IoT Smart-Speaker
 ## Overview
-This is the easiest way to control your speaker. Have you ever encounter the situation when you don't have spare hand turn off the music or feel annoying to control volume by keyboard? In my project, you can easily turn on and off the music simply by looking at the Picamera and blinking eyes. Our Python code will fetch and play studying youtube music automatically. You can stop at any time by blinking at the Picamera again. Utilizing gesture sensor to detect hands movement. If you move your hand upward, the volume will goes up, vice versa.
+This is the easiest way to control your speaker. Have you ever encounter the situation when you don't have spare hands turning off the music or feel annoying to control volume by keyboard? In my project, you can easily turn on and off the music simply by looking at the Picamera and blinking eyes. Our Python code will fetch and play studying youtube music automatically. You can stop at any time by blinking at the Picamera again. Utilizing gesture sensor to detect hands movement. If you move your hand upward, the volume will goes up, vice versa.
 This project can extend to anything you want to control with your eyes. For example, turn off the light, turn on the computer... and so on.
 
 ## Prerequisites
