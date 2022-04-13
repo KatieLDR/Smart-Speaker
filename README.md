@@ -398,4 +398,4 @@ if __name__ == '__main__':
 * [Eye landmark detection](https://medium.com/algoasylum/blink-detection-using-python-737a88893825)
 * [Youtube Music Fetch](https://linuxconfig.org/how-to-play-audio-with-vlc-in-python#:~:text=player.play()-,Stopping%20And%20Pause,if%20the%20file%20is%20playing.&text=If%20the%20player%20is%20already,altogether%2C%20call%20the%20stop%20method.)
 * [Volume Control](https://gist.github.com/peteristhegreat/3c94963d5b3a876b27accf86d0a7f7c0)
-* [dlib]https://pyimagesearch.com/2021/04/19/face-detection-with-dlib-hog-and-cnn/
+* [dlib](https://pyimagesearch.com/2021/04/19/face-detection-with-dlib-hog-and-cnn/)
